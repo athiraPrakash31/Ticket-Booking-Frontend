@@ -1,0 +1,111 @@
+/* Center the card and add a background with some padding */
+
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: black;
+    color: #fff;
+    height: 93.5vh;
+    overflow: hidden;
+    
+ }
+
+ .form {
+width: 40%;
+
+ }
+  /* Form styling */
+ .form form {
+     display: flex;
+     flex-direction: column;
+     gap: 25px;
+     box-sizing: border-box;
+     border-radius: 10px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+     padding: 20px;
+     background-color: black;
+   
+ }
+ 
+ /* Input field styling */
+ .inputs {
+     display: flex;
+     flex-direction: column;
+     gap: 5px;
+ }
+ 
+ /* Label styling */
+ .inputs label {
+     font-weight: bold;
+     color: #fff;
+     font-size: 14px;
+ }
+ 
+ /* Input field style with a smooth focus effect */
+ .inputs input {
+     padding: 10px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     font-size: 16px;
+     transition: border-color 0.3s ease, box-shadow 0.3s ease;
+ }
+ 
+ /* Add focus state for better user feedback */
+ .inputs input:focus {
+     outline: none;
+     border-color: #0070f3;
+     box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
+ }
+ 
+ .submit {
+    display: flex;
+    justify-content: center;
+ }
+
+ .button{
+    height: 35px;
+    width: 50%;
+    color: #fff;
+    background-color: rgb(146, 34, 34);
+    border: none;
+    border-radius: 5px;
+ }
+ 
+ .form p {
+    text-align: center;
+ }
+
+ .toggle{
+    color: rgb(173, 215, 252);
+    cursor: pointer;
+ }
+  
+ .toggle:hover {
+    text-decoration: underline;
+ }
+ 
+ .googleLogin{
+display: flex;
+justify-content: center;
+align-items: center;
+ }
+ .googleLogin button {
+    height: 40px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+ }
+
+ .error{
+    color: red;
+ }
+ 

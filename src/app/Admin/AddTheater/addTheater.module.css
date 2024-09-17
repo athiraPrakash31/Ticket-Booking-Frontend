@@ -1,0 +1,76 @@
+.forms {
+    width: 60%; /* Reduced width for better spacing */
+    max-width: 800px; /* Ensures it doesn't exceed 800px */
+    margin: 40px auto; /* Center the form with margin */
+    padding: 20px; /* Added padding */
+    display: flex;
+    flex-direction: column;
+    background-color: #fff; /* Light background for clarity */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for form styling */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.forms h2 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inputs input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.inputs input[type="file"] {
+    padding: 10px;
+    height: auto; /* Reset height for file input */
+}
+
+.inputs input::placeholder {
+    color: #aaa;
+    padding-left: 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.inputs button {
+    height: 40px;
+    width: 50%; /* Adjusted width for centering */
+    background: #d76565;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    cursor: pointer;
+}
+
+.inputs button:hover {
+    background-color: #b24e4e;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .forms {
+        width: 90%; /* Use more width in smaller viewports */
+        padding: 15px;
+    }
+
+    .inputs button {
+        width: 100%; /* Full-width button on smaller screens */
+    }
+}

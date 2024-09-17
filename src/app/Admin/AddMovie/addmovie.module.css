@@ -1,0 +1,57 @@
+.forms {
+    width: 70%;
+    height: 100vh;
+    margin: 0 auto; /* Center the form */
+    display: flex;
+    flex-direction: column;
+}
+
+.forms h2 {
+    margin: 20px 0; /* Adjust margin for better spacing */
+    text-align: center; /* Center align the heading */
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reduce gap for better alignment */
+}
+
+.inputs input {
+    height: 40px; /* Increase height for better readability */
+    border-radius: 5px;
+    border: 2px solid #ddd; /* Slightly lighter border color */
+    padding: 0 10px; /* Add padding inside input */
+    box-sizing: border-box; /* Ensure padding is included in the total width and height */
+}
+
+.inputs input::placeholder {
+    color: #aaa; /* Lighter color for placeholder text */
+    padding-left: 10px; /* Add padding in front of the placeholder text */
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Add top margin for spacing */
+}
+
+.inputs button {
+    height: 40px; /* Increase height for better readability */
+    width: 30%;
+    background: #d76565;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: large;
+    cursor: pointer; /* Add cursor pointer for button */
+}
+
+.inputs button:hover {
+    background-color: #b24e4e; /* Slightly darker color on hover */
+}
+
+.inputs input[type="file"] {
+padding: 6px 10px;
+}
+

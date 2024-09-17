@@ -1,0 +1,45 @@
+.images{
+    margin: 30px 50px;
+  box-shadow: 2px 2px 1px 2px #c8c1c1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 30px 30px;
+  gap: 50px;
+  
+}
+
+.images img {
+    border-radius: 10px;
+}
+.details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.theater{
+display: flex;
+flex-direction: row;
+gap: 10px;
+}
+.theater button {
+    width: 100px;
+    height: 30px;
+    background-color: #b1a59e;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+}
+.booking{
+    width: 150px;
+    height: 40px;
+    border: none;
+    background-color: #f84464;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 15px;
+}

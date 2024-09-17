@@ -1,0 +1,37 @@
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.bannerImage {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.buttonContainer {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.navButton {
+    background-color: #7e7878;
+    border: none;
+    padding: 5px;
+    margin: 0 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navButton.active {
+    background-color: #f7f4f4;
+    color: white;
+}

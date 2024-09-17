@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  background: black;
+  color: aliceblue; 
+   }
+.header h4 {
+    display: flex;
+    cursor: pointer;
+    font-size: 25px;
+    margin: 10px;
+}
+.header ul{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 10px;
+    list-style: none;
+}   
+
+
+
+.header .login {
+    border: none;
+    background-color: black;
+    color: aliceblue;
+    cursor: pointer;
+    font-size: unset;
+    padding: 0.5rem 1rem;
+}
+.header .login:hover {
+    
+    background-color: aliceblue;
+    color: black;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+}
+.search{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.search input {
+    width: 317px;
+  color: aliceblue;
+  background: rgb(119, 116, 116);
+  border: none;
+  height: 30px;
+  border-radius: 3px;  
+}
+

@@ -1,0 +1,29 @@
+.container  {
+    margin: 20px 30px;
+}
+.container h2 {
+    margin: 0 30px;
+}
+.cards{
+    display: flex;
+    margin: 10px 0;
+   justify-content: space-evenly;
+}
+.card {
+    cursor: pointer;
+}
+.cards img{
+    border-radius: 10px;
+    width: 250px;
+}
+
+
+
+@media only screen  and (max-width:768px) {
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+}

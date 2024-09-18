@@ -4,22 +4,23 @@ import { useState } from 'react';
 import styles from './admin.module.css';
 import Header from '@/Components/Header/page';
 import AddShow from './AddShow';
-import AddMovie from './AddMovie/AddMovie';
+// import AddMovie from './AddMovie/AddMovie';
 import Footer from '@/Components/Footer/page';
 import Theater from "./TheaterList/page"
+import Movies from './MovieList/page'
 const Admin = () => {
     const [activeTab, setActiveTab] = useState('AddMovie');
 
     const renderContent = () => {
         switch (activeTab) {
             case 'AddMovie':
-                return <AddMovie />;
+                return <Movies />;
             case 'AddTheater':
                 return <Theater/>;
             case 'AddShow':
                 return <AddShow />;
             default:
-                return <AddMovie />;
+                return <Movies />;
         }
     };
 

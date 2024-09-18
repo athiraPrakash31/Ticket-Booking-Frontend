@@ -1,29 +1,39 @@
-.container  {
+.container {
     margin: 20px 30px;
 }
+
 .container h2 {
     margin: 0 30px;
 }
-.cards{
-    display: flex;
-    margin: 10px 0;
-   justify-content: space-evenly;
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
+    gap: 20px; /* Add space between movie cards */
+    justify-items: center; /* Center the items within the grid */
 }
+
 .card {
     cursor: pointer;
+    width: 250px; /* Set width for the movie cards */
 }
-.cards img{
+
+.cards img {
     border-radius: 10px;
-    width: 250px;
+    width: 100%; /* Ensure image fills the card */
+    height: 350px;
 }
 
-
-
-@media only screen  and (max-width:768px) {
-.cards{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+/* Media query for smaller screens (tablets) */
+@media only screen and (max-width: 1024px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 movies per row */
+    }
 }
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr; /* 1 movie per row */
+    }
 }

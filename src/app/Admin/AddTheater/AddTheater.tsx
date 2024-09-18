@@ -77,7 +77,6 @@ export const AddTheater = ({ onTheaterAdded}:AddTheaterProps) => {
             <Toaster/>
             </div>
             </div>
-<Toaster/>
         </form>
         </>
     )

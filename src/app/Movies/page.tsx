@@ -30,13 +30,7 @@ export const Movies = () => {
     },[])
     console.log(movies);
     
-    // const movies = [
-    //     { id: 1, src: goat, alt: "Goat", name: "Goat" },
-    //     { id: 2, src: vaazha, alt: "Vaazha", name: "Vaazha" },
-    //     { id: 3, src: nunakuzhi, alt: "Nunakuzhi", name: "Nunakuzhi" },
-    //     { id: 4, src: saturday, alt: "Saturday", name: "Saturday" },
-    //     { id: 5, src: stree, alt: "Stree", name: "Stree" },
-    // ];
+
 
     // Navigate to movie details on card click
     const handleMovieClick = (_id: string) => {

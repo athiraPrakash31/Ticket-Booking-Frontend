@@ -1,0 +1,32 @@
+.seatbutton {
+    margin: 8px;
+    color: rgb(29, 25, 25);
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+    border: none;
+    border: 2px solid green;
+    border-radius: 4px;
+  }
+  
+  .seatbutton.selected {
+    background-color: green;
+    color: aliceblue;
+  }
+  
+  .seatbutton.deselected {
+    background-color: rgb(244, 248, 241);
+  }
+  
+  .totalprice {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .totalprice button{
+    padding: 5px 10px;
+    color: aliceblue;
+    background-color: rgb(214, 53, 53);
+    border: none;
+    
+  }

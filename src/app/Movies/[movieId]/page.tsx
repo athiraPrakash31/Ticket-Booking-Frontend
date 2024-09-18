@@ -1,34 +1,66 @@
 "use client";
 import Footer from "@/Components/Footer/page";
 import Header from "@/Components/Header/page";
-import { useParams, useRouter } from "next/navigation";
-import Image from "next/image";
+import {useRouter } from "next/navigation";
+// import Image from "next/image";
 import styles from './movieId.module.css'
-import goat from "../../../Themes/Images/goat.jpg";
-import vaazha from "../../../Themes/Images/vaazha.jpg";
-import nunakuzhi from "../../../Themes/Images/nunakuzhi.jpg";
-import saturday from "../../../Themes/Images/saturday.jpg";
-import stree from "../../../Themes/Images/stree2.jpg";
+import {getMovieByIdAPI} from  './Service/api';
+import { useEffect, useState } from "react";
 
 // Movie data array
-const movies = [
-  { id: 1, src: goat, alt: "Goat", name: "Goat" },
-  { id: 2, src: vaazha, alt: "Vaazha", name: "Vaazha" },
-  { id: 3, src: nunakuzhi, alt: "Nunakuzhi", name: "Nunakuzhi" },
-  { id: 4, src: saturday, alt: "Saturday", name: "Saturday" },
-  { id: 5, src: stree, alt: "Stree", name: "Stree" },
-];
 
-export const MovieDetails = () => {
-  const { movieId } = useParams();
+interface Movie {
+  _id: string;
+  title: string;
+  posterImage: string;
+  synopsis: string;
+  language:string;
+  genre: string;
+  duration: string;
+  releaseDate: string;
+ 
+  // other fields
+}
+interface MovieDetailsProps {
+  params: { movieId: string }; // Define the params prop with id
+}
+
+export const MovieDetails:React.FC<MovieDetailsProps> = ({params}) => {
+  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+  const { movieId } = params;// Get the movie ID from URL params  const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
+  console.log(movieId);
+  console.log(params);
+  const serverURL = process.env.NEXT_PUBLIC_SERVER_URL; // Fetch server URL from env
+
+  
   const router = useRouter();
+    const fetchMovieDetail = async ()=>{
+      try{
+        
 
+          const movie = await getMovieByIdAPI(movieId)
+          setSelectedMovie(movie); // Update state with the movie data
+          console.log(movie);
+        
+        
+      }
+      catch(error){
+        console.log(error);
+        
+      }
+    }
+    
+  
 
-  if (typeof movieId !== "string") {
-    return <h1>Invalid movie ID</h1>;
-  }
-  const selectedMovie = movies.find((movie) => movie.id === parseInt(movieId));
+  useEffect(()=>{
+    
 
+      fetchMovieDetail();
+    
+    
+    },[movieId])
+
+    
   if (!selectedMovie) {
     return <h1>Loading</h1>;
   }
@@ -41,19 +73,29 @@ export const MovieDetails = () => {
       <Header />
       <div className={styles.images}>
 
-      <Image
-        src={selectedMovie.src}
-        alt={selectedMovie.alt}
+      <img
+        src={selectedMovie.posterImage? `${serverURL}/uploads/${selectedMovie.posterImage}` : "default"}
+        alt={selectedMovie.title}
         width={230}
         height={400}
       />
       <div className={styles.details}>
-        <h2>{selectedMovie.name}</h2>
+        <h2>{selectedMovie.title}</h2>
         <div className={styles.theater}>
-        <button>IMAX</button>
-        <button>Tamil, Telugu</button>
+        <button>Theater name</button>
+        <button>{selectedMovie.language}</button>
         </div>
-        <p>3h 3m</p> <p>Action, Drama, Thriller</p><p>13 Sep, 2024</p>
+        <p>{selectedMovie.duration}</p> <p>{selectedMovie.genre}</p>
+        <p>
+        {new Date(selectedMovie.releaseDate)
+                   .toLocaleDateString("en-GB", {
+                     year: "numeric",
+                     month: "short",
+                     day: "2-digit",
+                   })
+                   .replace(/ /g, "-")}
+
+        </p>
         <button className={styles.booking} onClick={booked}>Book Tickets</button>
 
       </div>
